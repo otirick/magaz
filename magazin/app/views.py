@@ -11,3 +11,4 @@ def index(request):
     return render(request, 'index.html')
 
 # Выдаём базу и подключаем админку
+# 123
