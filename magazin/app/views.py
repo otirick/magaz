@@ -34,7 +34,12 @@ def product_list(request):
 
 def product_page(request, id):
     product = Product.objects.get(id=id)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('/products/')
     price = product.get_dollar_price()
     return render(request, 'product.html', {'product': product, 'price': price})
+
+
 
 # TODO: подключаем админку 123

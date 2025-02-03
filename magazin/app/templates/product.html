@@ -11,6 +11,10 @@
 <h2>{{ price }}</h2>
 
 <a href="/products/">Назад к списку</a>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
 
+</form>
 </body>
 </html>
