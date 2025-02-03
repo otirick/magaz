@@ -11,5 +11,10 @@ class Product(models.Model):
     def get_dollar_price(self):
         return self.price.replace('RUB', '$')
 
+    def save(self, *args, **kwargs):
+        if not self.price[-1] == "B" and not self.price[-1] == "$":
+            self.price += " RUB"
+        return super(Product, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name

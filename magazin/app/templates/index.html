@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>{{ name }}</title>
+    <link href="{% static 'styles/index.css' %}" rel="stylesheet">
+    <title></title>
 </head>
 <body>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Отправить</button>
-</form>
+
+<div class="header">
+
+    <div class="left">
+        <a href="#">Поддержка</a>
+        <a href="#">Отзывы</a>
+    </div>
+
+    <div class="center">
+        <img src="{% static 'img/logo.png' %}">
+    </div>
+
+    <div class="right">
+
+        <div class="search">
+            <form method="post">
+                <input type="text" name="search" placeholder="Поиск...">
+                <button type="submit">
+                    <img src="{% static 'img/search.png' %}">
+                </button>
+            </form>
+        </div>
+
+        <div class="cart">
+            <a href="/cart/"><img src="{% static 'img/cart.png' %}"></a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="mid">
+
+    {% for cat in cats %}
+
+    <div class="card">
+        <p> {{ cat }} </p>
+    </div>
+
+    {% endfor %}
+
+</div>
+
 </body>
 </html>
