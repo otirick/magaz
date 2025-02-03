@@ -42,4 +42,4 @@ def product_page(request, id):
 
 
 
-# TODO: подключаем админку 123
+# TODO: подключаем админку 1234
