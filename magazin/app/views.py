@@ -37,4 +37,4 @@ def product_page(request, id):
     price = product.get_dollar_price()
     return render(request, 'product.html', {'product': product, 'price': price})
 
-# TODO: подключаем админку
+# TODO: подключаем админку 123
